@@ -1,7 +1,7 @@
-import pygame, random, sys
+import pygame, random, sys, math
 from pygame.locals import *
 
-FPS=13
+FPS=25
 WIDTH = 630
 HEIGHT = 630
 x = 0
@@ -14,7 +14,7 @@ DARKBLUE  = (  0,  51, 255)
 
 START = 0
 STATUS = 0
-
+HIGHSCORE = 0
 
 done= False
 
@@ -43,7 +43,8 @@ def main():
 def runGame():
     global airplane1, airplane2, airplane3, airplane4, airplane
     global direction, START, x, y
-    
+
+    score = 0
     direction='up'
     airplane = pygame.transform.scale(airplane1, (75, 75))
     START=1
@@ -81,7 +82,8 @@ def runGame():
         
         if x>550 or x<0 or y>550 or y<0:
             return
-        
+
+        drawScore(score, FPS)
         DISPLAYSURF.blit(airplane,(x,y))
         pygame.display.update()
 
@@ -186,6 +188,16 @@ def showGameOver():
         pygame.display.update()
         FPSCLOCK.tick(FPS)
         degrees1 += 10
+
+def drawScore(score, fps):
+    scoreSurf = BASICFONT.render('Score: %d' % (score), True, BLACK)
+    scoreRect = scoreSurf.get_rect()
+    scoreRect.topleft = (WIDTH - 120, 10)
+    DISPLAYSURF.blit(scoreSurf, scoreRect)
+    scoreSurf = BASICFONT.render('FPS: %d' % (fps), True, BLACK)
+    scoreRect = scoreSurf.get_rect()
+    scoreRect.topleft = (WIDTH - 120, 40)
+    DISPLAYSURF.blit(scoreSurf, scoreRect)
         
     
 
