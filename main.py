@@ -13,6 +13,7 @@ SKYBLUE   = (153, 255, 255)
 DARKBLUE  = (  0,  51, 255)
 RED       = ( 255,  0,   0)
 YELLOW    = (255, 255,   0)
+GREEN     = (  0, 100,   0)
 
 START = 0
 STATUS = 0
@@ -44,6 +45,26 @@ class Bullet(pygame.sprite.Sprite):
         if self.rect.top > HEIGHT:
             self.kill()
 bullets = pygame.sprite.Group()
+
+class SniperBullet(pygame.sprite.Sprite):
+    def __init__(self, x, y, target_x, target_y):
+        super().__init__()
+        self.image = pygame.Surface((20, 20))
+        self.image.fill(GREEN)
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+        angle = math.atan2(target_y - y, target_x - x)
+        self.speed_x = math.cos(angle) * 5
+        self.speed_y = math.sin(angle) * 5
+
+    def update(self):
+        self.rect.x += self.speed_x
+        self.rect.y += self.speed_y
+        if self.rect.top > HEIGHT or self.rect.bottom < 0 or self.rect.right < 0 or self.rect.left > WIDTH:
+            self.kill()
+
+sniper_bullets = pygame.sprite.Group()
 
 class EnemyAirplane(pygame.sprite.Sprite):
     def __init__(self, x, y):
@@ -110,7 +131,7 @@ def main():
 
 def runGame():
     global airplane1, airplane2, airplane3, airplane4, airplane
-    global direction, START, x, y, done, bullets, enemies, STATUS, FPS
+    global direction, START, x, y, done, bullets, enemies, STATUS, FPS, sniper_bullets
 
     direction='up'
     airplane = pygame.transform.scale(airplane1, (75, 75))
@@ -122,10 +143,12 @@ def runGame():
     bullets.empty()
     enemies.empty()
     coins.empty()
+    sniper_bullets.empty()
 
     bullet_timer = 0
     enemy_spawn_timer = 0
     coin_spawn_timer = 0
+    sniper_timer = 0
     
     while not done:
         FPSCLOCK.tick(FPS)
@@ -167,6 +190,7 @@ def runGame():
         bullet_timer += 1
         enemy_spawn_timer += 1
         coin_spawn_timer += 1
+        sniper_timer += 1
 
         if bullet_timer > 20:
             for enemy in enemies:
@@ -195,6 +219,12 @@ def runGame():
             coins.add(coin)
             coin_spawn_timer = 0
 
+        if sniper_timer > 50:
+            sniper_x = random.randint(0, WIDTH)
+            sniper_bullet = SniperBullet(sniper_x, 0, x, y)
+            sniper_bullets.add(sniper_bullet)
+            sniper_timer = 0
+
         bullets.update()
         bullets.draw(DISPLAYSURF)
 
@@ -204,8 +234,17 @@ def runGame():
         coins.update()
         coins.draw(DISPLAYSURF)
 
+        sniper_bullets.update()
+        sniper_bullets.draw(DISPLAYSURF)
+
         for bullet in bullets:
             if bullet.rect.colliderect(player_rect):
+                STATUS = 2
+                done = True
+
+                
+        for sniper_bullet in sniper_bullets:
+            if sniper_bullet.rect.colliderect(player_rect):
                 STATUS = 2
                 done = True
 
