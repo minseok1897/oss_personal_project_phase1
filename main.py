@@ -1,7 +1,7 @@
 import pygame, random, sys, math
 from pygame.locals import *
 
-FPS=25
+FPS=20
 WIDTH = 630
 HEIGHT = 630
 x = 0
@@ -12,6 +12,7 @@ BLACK     = (  0,   0,   0)
 SKYBLUE   = (153, 255, 255)
 DARKBLUE  = (  0,  51, 255)
 RED       = ( 255,  0,   0)
+YELLOW    = (255, 255,   0)
 
 START = 0
 STATUS = 0
@@ -78,6 +79,18 @@ class EnemyAirplane(pygame.sprite.Sprite):
             self.bullets_fired += 1
 
 enemies = pygame.sprite.Group()
+
+
+class Coin(pygame.sprite.Sprite):
+    def __init__(self, x, y):
+        super().__init__()
+        self.image = pygame.Surface((20, 20))
+        self.image.fill(YELLOW)
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+
+coins = pygame.sprite.Group()
             
 
 def main():
@@ -97,20 +110,22 @@ def main():
 
 def runGame():
     global airplane1, airplane2, airplane3, airplane4, airplane
-    global direction, START, x, y, done, bullets, enemies, STATUS
+    global direction, START, x, y, done, bullets, enemies, STATUS, FPS
 
-    score = 0
     direction='up'
     airplane = pygame.transform.scale(airplane1, (75, 75))
     START=1
     x=270
     y= HEIGHT-120
+    score = 0
     done = False
     bullets.empty()
     enemies.empty()
+    coins.empty()
 
     bullet_timer = 0
     enemy_spawn_timer = 0
+    coin_spawn_timer = 0
     
     while not done:
         FPSCLOCK.tick(FPS)
@@ -143,12 +158,15 @@ def runGame():
         
         if x>550 or x<0 or y>550 or y<0:
             STATUS = 1
-            return
+            done = True
 
+
+        player_rect = pygame.Rect(x, y, 50, 50)
         DISPLAYSURF.blit(airplane, (x, y))
 
         bullet_timer += 1
         enemy_spawn_timer += 1
+        coin_spawn_timer += 1
 
         if bullet_timer > 20:
             for enemy in enemies:
@@ -170,21 +188,37 @@ def runGame():
                     attempts += 1
             enemy_spawn_timer = 0
 
+        if coin_spawn_timer > random.randint(100, 300):
+            coin_x = random.randint(50, WIDTH - 50)
+            coin_y = random.randint(300, HEIGHT - 70)
+            coin = Coin(coin_x, coin_y)
+            coins.add(coin)
+            coin_spawn_timer = 0
+
         bullets.update()
         bullets.draw(DISPLAYSURF)
 
         enemies.update()
         enemies.draw(DISPLAYSURF)
 
+        coins.update()
+        coins.draw(DISPLAYSURF)
+
         for bullet in bullets:
-            if bullet.rect.colliderect(pygame.Rect(x, y, 50, 50)):
+            if bullet.rect.colliderect(player_rect):
                 STATUS = 2
                 done = True
 
-        player_rect = pygame.Rect(x, y, 50, 50)
         if any(enemy.rect.colliderect(player_rect) for enemy in enemies):
             STATUS=3
             done = True
+
+        collected_coins = [coin for coin in coins if coin.rect.colliderect(player_rect)]
+        for coin in collected_coins:
+            score += 1
+            if score % 5 == 0:
+                FPS +=1
+            coin.kill()
 
         drawScore(score, FPS)
         DISPLAYSURF.blit(airplane,(x,y))
