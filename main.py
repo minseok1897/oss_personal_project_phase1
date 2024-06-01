@@ -17,6 +17,7 @@ GREEN     = (  0, 100,   0)
 
 START = 0
 STATUS = 0
+score = 0
 HIGHSCORE = 0
 
 done= False
@@ -131,7 +132,7 @@ def main():
 
 def runGame():
     global airplane1, airplane2, airplane3, airplane4, airplane
-    global direction, START, x, y, done, bullets, enemies, STATUS, FPS, sniper_bullets
+    global direction, START, x, y, score, done, bullets, enemies, STATUS, FPS, sniper_bullets
 
     direction='up'
     airplane = pygame.transform.scale(airplane1, (75, 75))
@@ -315,6 +316,13 @@ def showStartScreen():
 
 
 def showGameOver():
+    global HIGHSCORE
+    newscore = 0
+    
+    if HIGHSCORE < score:
+        newscore = 1
+        HIGHSCORE = score
+        
     gameOverFont1 = pygame.font.Font('freesansbold.ttf', 100)
     gameOverFont2 = pygame.font.Font('freesansbold.ttf', 70)
     gameOverFont3 = pygame.font.Font('freesansbold.ttf', 20)
@@ -322,6 +330,11 @@ def showGameOver():
     gameSurf = gameOverFont1.render('Game', True, BLACK)
     overSurf = gameOverFont2.render('Over', True, BLACK)
     reasonSurf = gameOverFont3.render('You hit the wall!', True, BLACK)
+    
+    bestSurf = gameOverFont3.render('BEST SCORE:'+ str(HIGHSCORE), True, BLACK)
+
+    if newscore ==1:
+        bestSurf = gameOverFont3.render('You Break Record!!!!!!!! BEST SCORE:'+ str(HIGHSCORE), True, BLACK)
 
     if STATUS == 1:
         reasonSurf = gameOverFont3.render('You hit the wall!', True, BLACK)
@@ -338,10 +351,15 @@ def showGameOver():
     reasonRect = reasonSurf.get_rect()
     reasonRect.midtop=(WIDTH/2, 350)
 
+    bestRect = bestSurf.get_rect()
+    bestRect.midtop=(WIDTH/2, 400)
+
+
     DISPLAYSURF.blit(airplane, (x, y))
     DISPLAYSURF.blit(gameSurf, gameRect)
     DISPLAYSURF.blit(reasonSurf, reasonRect)
     DISPLAYSURF.blit(overSurf, overRect)
+    DISPLAYSURF.blit(bestSurf, bestRect)
     
     drawPressKeyMsg()
     pygame.display.update()
@@ -354,6 +372,7 @@ def showGameOver():
         DISPLAYSURF.blit(airplane, (x, y))
         DISPLAYSURF.blit(gameSurf, gameRect)
         DISPLAYSURF.blit(reasonSurf, reasonRect)
+        DISPLAYSURF.blit(bestSurf, bestRect)
         
         rotatedSurf3 = pygame.transform.rotate(overSurf, degrees1)
         rotatedRect3 = rotatedSurf3.get_rect()
