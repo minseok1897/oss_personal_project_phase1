@@ -1,7 +1,7 @@
 import pygame, random, sys, math
 from pygame.locals import *
 
-FPS=20
+FPS=18
 WIDTH = 630
 HEIGHT = 630
 x = 0
@@ -31,6 +31,23 @@ airplane = pygame.transform.scale(airplane1, (50, 50))
 
 enemy_airplane = pygame.transform.scale(pygame.image.load('./images/airplane11.png'), (50, 50))
 
+class PlayerBullet(pygame.sprite.Sprite):
+    def __init__(self, x, y):
+        super().__init__()
+        self.image = pygame.Surface((10, 10))
+        self.image.fill(BLACK)
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+        self.speed = -15
+
+    def update(self):
+        self.rect.y += self.speed
+        if self.rect.bottom < 0:
+            self.kill()
+
+player_bullets = pygame.sprite.Group()
+
 class Bullet(pygame.sprite.Sprite):
     def __init__(self, x, y, speed):
         super().__init__()
@@ -45,6 +62,7 @@ class Bullet(pygame.sprite.Sprite):
         self.rect.y += self.speed
         if self.rect.top > HEIGHT:
             self.kill()
+            
 bullets = pygame.sprite.Group()
 
 class SniperBullet(pygame.sprite.Sprite):
@@ -132,10 +150,11 @@ def main():
 
 def runGame():
     global airplane1, airplane2, airplane3, airplane4, airplane
-    global direction, START, x, y, score, done, bullets, enemies, STATUS, FPS, sniper_bullets
+    global direction, START, x, y, score, done, bullets, enemies, STATUS, FPS, sniper_bullets, player_bullets
 
+    FPS = 18
     direction='up'
-    airplane = pygame.transform.scale(airplane1, (75, 75))
+    airplane = pygame.transform.scale(airplane1, (50, 50))
     START=1
     x=270
     y= HEIGHT-120
@@ -145,6 +164,7 @@ def runGame():
     enemies.empty()
     coins.empty()
     sniper_bullets.empty()
+    player_bullets.empty()
 
     bullet_timer = 0
     enemy_spawn_timer = 0
@@ -160,17 +180,20 @@ def runGame():
                 terminate()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
-                    airplane = pygame.transform.scale(airplane1, (75, 75))
+                    airplane = pygame.transform.scale(airplane1, (50, 50))
                     direction = 'up'
                 elif event.key ==pygame.K_DOWN:
-                    airplane = pygame.transform.scale(airplane3, (75, 75))
+                    airplane = pygame.transform.scale(airplane3, (50, 50))
                     direction = 'down'
                 elif event.key ==pygame.K_RIGHT:
-                    airplane = pygame.transform.scale(airplane2, (75, 75))
+                    airplane = pygame.transform.scale(airplane2, (50, 50))
                     direction = 'right'
                 elif event.key ==pygame.K_LEFT:
-                    airplane = pygame.transform.scale(airplane4, (75, 75))
+                    airplane = pygame.transform.scale(airplane4, (50, 50))
                     direction = 'left'
+                elif event.key == pygame.K_SPACE:
+                    bullet = PlayerBullet(x + 25, y)
+                    player_bullets.add(bullet)
         if direction == 'up':
             y-=20
         elif direction == 'down':
@@ -237,6 +260,17 @@ def runGame():
 
         sniper_bullets.update()
         sniper_bullets.draw(DISPLAYSURF)
+
+        player_bullets.update()
+        player_bullets.draw(DISPLAYSURF)
+
+        for player_bullet in player_bullets:
+            hit_enemies = pygame.sprite.spritecollide(player_bullet, enemies, True)
+            for enemy in hit_enemies:
+                score+=1
+                if score %5==0:
+                    FPS+=1
+                player_bullet.kill()
 
         for bullet in bullets:
             if bullet.rect.colliderect(player_rect):
