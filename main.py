@@ -2,10 +2,10 @@ import pygame, random, sys, math
 from pygame.locals import *
 
 FPS=18
-WIDTH = 630
-HEIGHT = 630
-x = 0
-y = 0
+WIDTH = 630             #게임 창 가로 길이
+HEIGHT = 630            #게임 창 세로 길이
+x = 0                   #유저 비행기 x축 값
+y = 0                   #유저 비행기 y축 값
 
 WHITE     = (255, 255, 255)
 BLACK     = (  0,   0,   0)
@@ -15,10 +15,10 @@ RED       = ( 255,  0,   0)
 YELLOW    = (255, 255,   0)
 GREEN     = (  0, 100,   0)
 
-START = 0
-STATUS = 0
+START = 0              #게임 시작, 재시작 구분 변수
+STATUS = 0             #유저 게임 오버 사유 구분 변수
 score = 0
-HIGHSCORE = 0
+HIGHSCORE = 0          #최고 점수 저장 변수
 
 done= False
 
@@ -31,6 +31,7 @@ airplane = pygame.transform.scale(airplane1, (50, 50))
 
 enemy_airplane = pygame.transform.scale(pygame.image.load('./images/airplane11.png'), (50, 50))
 
+#유저 공격 구현 class
 class PlayerBullet(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
@@ -43,11 +44,12 @@ class PlayerBullet(pygame.sprite.Sprite):
 
     def update(self):
         self.rect.y += self.speed
-        if self.rect.bottom < 0:
+        if self.rect.bottom < 0:               #화면 밖으로 나갔을 때 삭제
             self.kill()
 
 player_bullets = pygame.sprite.Group()
 
+#적 공격 구현 class
 class Bullet(pygame.sprite.Sprite):
     def __init__(self, x, y, speed):
         super().__init__()
@@ -60,11 +62,12 @@ class Bullet(pygame.sprite.Sprite):
 
     def update(self):
         self.rect.y += self.speed
-        if self.rect.top > HEIGHT:
+        if self.rect.top > HEIGHT:           #화면 밖으로 나갔을 때 삭제
             self.kill()
             
 bullets = pygame.sprite.Group()
 
+#유도탄 공격 구현 class
 class SniperBullet(pygame.sprite.Sprite):
     def __init__(self, x, y, target_x, target_y):
         super().__init__()
@@ -73,7 +76,7 @@ class SniperBullet(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
-        angle = math.atan2(target_y - y, target_x - x)
+        angle = math.atan2(target_y - y, target_x - x)       #math import 후 유저 위치 파악
         self.speed_x = math.cos(angle) * 5
         self.speed_y = math.sin(angle) * 5
 
@@ -85,6 +88,7 @@ class SniperBullet(pygame.sprite.Sprite):
 
 sniper_bullets = pygame.sprite.Group()
 
+#적 비행기 등장 구현 class
 class EnemyAirplane(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
@@ -95,9 +99,9 @@ class EnemyAirplane(pygame.sprite.Sprite):
         self.speed = 2
         self.shooting = False
         self.bullets_fired = 0
-        self.max_bullets = random.randint(5, 10)
+        self.max_bullets = random.randint(5, 10)         #총알 갯수 랜덤 생성
         self.retreating = False
-        self.bullet_speed = random.randint(8, 15)
+        self.bullet_speed = random.randint(8, 15)        #총알 스피드 랜덤 생성
 
     def update(self):
         if not self.shooting:
@@ -120,7 +124,7 @@ class EnemyAirplane(pygame.sprite.Sprite):
 
 enemies = pygame.sprite.Group()
 
-
+#점수 구현 위한 코인 class
 class Coin(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
@@ -160,6 +164,8 @@ def runGame():
     y= HEIGHT-120
     score = 0
     done = False
+
+    #게임 재시작을 위한 이전 게임 요소 정리
     bullets.empty()
     enemies.empty()
     coins.empty()
@@ -175,6 +181,7 @@ def runGame():
         FPSCLOCK.tick(FPS)
         DISPLAYSURF.fill(SKYBLUE)
 
+        #유저 조작 확인
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 terminate()
@@ -202,7 +209,8 @@ def runGame():
             x-=20
         elif direction == 'right':
             x+=20
-        
+
+        #유저가 벽에 부딪혔을때
         if x>550 or x<0 or y>550 or y<0:
             STATUS = 1
             done = True
@@ -216,11 +224,13 @@ def runGame():
         coin_spawn_timer += 1
         sniper_timer += 1
 
+        #상대 공격 구현 구체화
         if bullet_timer > 20:
             for enemy in enemies:
                 enemy.shoot()
             bullet_timer = 0
 
+        #적 등장 구현, 최대 4기 까지 등장
         if enemy_spawn_timer > random.randint(50, 150):
             if len(enemies) < 4:
                 attempts = 0
@@ -236,6 +246,7 @@ def runGame():
                     attempts += 1
             enemy_spawn_timer = 0
 
+        #코인 생성 구현
         if coin_spawn_timer > random.randint(100, 300):
             coin_x = random.randint(50, WIDTH - 50)
             coin_y = random.randint(300, HEIGHT - 70)
@@ -243,6 +254,8 @@ def runGame():
             coins.add(coin)
             coin_spawn_timer = 0
 
+
+        #유도탄 생성 구현
         if sniper_timer > 50:
             sniper_x = random.randint(0, WIDTH)
             sniper_bullet = SniperBullet(sniper_x, 0, x, y)
@@ -264,6 +277,7 @@ def runGame():
         player_bullets.update()
         player_bullets.draw(DISPLAYSURF)
 
+        #유저의 공격이 적 비행기를 격추시켰을 때 구현
         for player_bullet in player_bullets:
             hit_enemies = pygame.sprite.spritecollide(player_bullet, enemies, True)
             for enemy in hit_enemies:
@@ -272,6 +286,9 @@ def runGame():
                     FPS+=1
                 player_bullet.kill()
 
+
+
+        #상대 공격에 유저가 맞았을때
         for bullet in bullets:
             if bullet.rect.colliderect(player_rect):
                 STATUS = 2
@@ -283,10 +300,12 @@ def runGame():
                 STATUS = 2
                 done = True
 
+        #상대 비행기에 유저가 부딪혔을 때
         if any(enemy.rect.colliderect(player_rect) for enemy in enemies):
             STATUS=3
             done = True
 
+        #유저가 코인을 획득했을 때
         collected_coins = [coin for coin in coins if coin.rect.colliderect(player_rect)]
         for coin in collected_coins:
             score += 1
@@ -367,9 +386,11 @@ def showGameOver():
     
     bestSurf = gameOverFont3.render('BEST SCORE:'+ str(HIGHSCORE), True, BLACK)
 
+    #유저가 기록을 갱신했을 때
     if newscore ==1:
         bestSurf = gameOverFont3.render('You Break Record!!!!!!!! BEST SCORE:'+ str(HIGHSCORE), True, BLACK)
 
+    #유저의 사망 이유에 따라 이유 갱신
     if STATUS == 1:
         reasonSurf = gameOverFont3.render('You hit the wall!', True, BLACK)
     elif STATUS == 2:
