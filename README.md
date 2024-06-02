@@ -20,24 +20,65 @@
 
 게임의 주요 특징과 플레이 방법은 이후 게임 플레이 설명 파트에서 더 자세하게 설명드리겠습니다.
 
+<p align="center">
 <img src="https://github.com/minseok1897/oss_personal_project_phase1/assets/127393443/f4b636eb-1b5f-42a3-bca3-adadd6ee678d" width="200" height="200"/>     
 <img src="https://github.com/minseok1897/oss_personal_project_phase1/assets/127393443/8a59130c-ba0f-4f8e-8911-599e72bc1551" width="250" height="200"/>
+</p>
 
 
 ### 2. ?지원 Operating System 및 실행 방법
 ***
->  이런식으로
+해당 게임은 Python과 Pygame 라이브러리를 사용하고 있으며 지원하는 운영 체제는 다음과 같습니다.
+<p align="center">
 
-``` python
-num=10
-```
+|OS|지원여부|
+|------|---|
+|Windows|O|
+|Mac|검증 x|
+|Linux|O|
+</p>
+
+### 실행방법
+#### Windows
+1. 해당 프로젝트를 다운로드 한다.
+2. python 3.12를 설치한다
+3. 터미널 또는 명령 프롬프트에서 다음 명령어를 통해 Pygame을 설치한다.
+
+    ```sh
+    pip3 install pygame
+    ```
+
+4. 재부팅 후 다운로드된 프로젝트 디렉토리에서 python3 main.py를 실행하면 게임 창이 뜨면서 실행된다.
+
+#### Mac
+
+검증을 하지는 않았지만 Mac 환경 역시 Pygame이 설치되어있는 환경에서 main.py를 실행할 경우 구동이 될 것입니다.
+
+#### Linux
+1. Docker를 설치한다
+2. git clone을 통해 파일을 다운로드 한다
+   ```sh
+   git clone https://github.com/minseok1897/oss_personal_project_phase1/commits/master/
+   cd oss_personal_project_phase1
+   ```
+3. Dockerfile을 build한다
+   ```sh
+   docker build -t airplane:0.1 .
+   ```
+4. docker container를 실행한다
+   ```sh
+    docker run -it airplane:0.1 /bin/bash
+    ```
+5. 컨테이너 실행과 동시에 게임이 시작된다.
 
 
 ### 3. ?게임 실행 예시
 ***
 게임이 시작되면 유저는 적 전투기에서 발사되는 총알(빨간색 구체)를 피하며 코인(노란색 사각형)을 획득하여야 합니다. 적 전투기를 공격하여 제거할 수도 있습니다. 다만 보이지 않는 저격수가 발사하는 유도탄(초록색 구체)을 조심해야 합니다?
 
+<p align="center">
 <img src="https://github.com/minseok1897/oss_personal_project_phase1/assets/127393443/8883d0eb-b6b0-4927-9512-bf31ec3fc61e" width="300" height="300"/>
+</p>
 
 ### 4. ?게임 플레이 설명
 ***
@@ -69,9 +110,11 @@ num=10
      + 첫번째: 벽에 부딪히는 경우(하단 좌측)
      + 두번째: 적에 의해 공격 당하는 경우(하단 중앙)
      + 세번째: 적 비행기에 부딪히는 경우(하단 우측)
-  <img src="https://github.com/minseok1897/oss_personal_project_phase1/assets/127393443/a2d7a937-ffee-4b77-a672-24fc7123417b" width="100" height="100"/>
-  <img src="https://github.com/minseok1897/oss_personal_project_phase1/assets/127393443/b9051515-57f4-4232-94dd-1a222992df5e" width="100" height="100"/>
-  <img src="https://github.com/minseok1897/oss_personal_project_phase1/assets/127393443/f1a27f50-5db1-42ca-8617-b7047c263492" width="100" height="100"/>
+  <p align="center">
+  <img src="https://github.com/minseok1897/oss_personal_project_phase1/assets/127393443/a2d7a937-ffee-4b77-a672-24fc7123417b" width="200" height="200"/>
+  <img src="https://github.com/minseok1897/oss_personal_project_phase1/assets/127393443/b9051515-57f4-4232-94dd-1a222992df5e" width="200" height="200"/>
+  <img src="https://github.com/minseok1897/oss_personal_project_phase1/assets/127393443/f1a27f50-5db1-42ca-8617-b7047c263492" width="200" height="200"/>
+</p>
 
    + 게임이 종료되면 게임 오버 화면이 나타나고, 지금까지의 최고기록을 표시해줍니다. 최고 기록을 갱신하면 축하메세지 또한 표시해줍니다.
    + 게임을 재시작하려면 게임오버 화면에서 아무 키를 눌러 재시작할 수 있습니다.
