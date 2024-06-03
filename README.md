@@ -1,24 +1,24 @@
-# ??ÀüÅõ±â °ÔÀÓ(Flying an airplane) ÇÁ·ÎÁ§Æ®
-º» ÇÁ·ÎÁ§Æ®´Â ÀüÅõ±â °ÔÀÓ(Flying an airplane) ¸¸µé±â ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù. pygame¿¡ ±â¹ÝÇÏ°í ÀÖÀ¸¸ç °£´ÜÇÑ Á¶ÀÛÀ¸·Î ¿¹Àü ÇÇÃ³Æù ¹× ½º¸¶Æ®Æù ÃÊ±â °ÔÀÓ ¾ÛµéÀÇ °¨¼ºÀ» ´À³¥ ¼ö ÀÖµµ·Ï ÇÏ¿´½À´Ï´Ù. º» ÇÁ·ÎÁ§Æ®´Â ¿ÀÇÂ¼Ò½º¼ÒÇÁÆ®¿þ¾î½Ç½À °úÁ¦ÀÇ ÀÏÈ¯À¸·Î ÀÛ¼ºµÇ¾ú½À´Ï´Ù.
+# âœˆï¸ì „íˆ¬ê¸° ê²Œìž„(Flying an airplane) í”„ë¡œì íŠ¸
+ë³¸ í”„ë¡œì íŠ¸ëŠ” ì „íˆ¬ê¸° ê²Œìž„(Flying an airplane) ë§Œë“¤ê¸° í”„ë¡œì íŠ¸ìž…ë‹ˆë‹¤. pygameì— ê¸°ë°˜í•˜ê³  ìžˆìœ¼ë©° ê°„ë‹¨í•œ ì¡°ìž‘ìœ¼ë¡œ ì˜ˆì „ í”¼ì²˜í° ë° ìŠ¤ë§ˆíŠ¸í° ì´ˆê¸° ê²Œìž„ ì•±ë“¤ì˜ ê°ì„±ì„ ëŠë‚„ ìˆ˜ ìžˆë„ë¡ í•˜ì˜€ìŠµë‹ˆë‹¤. ë³¸ í”„ë¡œì íŠ¸ëŠ” ì˜¤í”ˆì†ŒìŠ¤ì†Œí”„íŠ¸ì›¨ì–´ì‹¤ìŠµ ê³¼ì œì˜ ì¼í™˜ìœ¼ë¡œ ìž‘ì„±ë˜ì—ˆìŠµë‹ˆë‹¤.
 
-## ?¸ñÂ÷
-1. ¼Ò°³
-2. Áö¿ø Operating System ¹× ½ÇÇà ¹æ¹ý
-3. °ÔÀÓ ½ÇÇà ¿¹½Ã
-4. °ÔÀÓ ÇÃ·¹ÀÌ ¼³¸í
-5. ÄÚµå ¼³¸í
+## ðŸ“‹ëª©ì°¨
+1. ì†Œê°œ
+2. ì§€ì› Operating System ë° ì‹¤í–‰ ë°©ë²•
+3. ê²Œìž„ ì‹¤í–‰ ì˜ˆì‹œ
+4. ê²Œìž„ í”Œë ˆì´ ì„¤ëª…
+5. ì½”ë“œ ì„¤ëª…
 6. Reference
 7. TODO List
 
 
 
-### 1. ¼Ò°³
+### 1. ì†Œê°œðŸ’
 ***
-ÀÌ °ÔÀÓÀº ÇÃ·¹ÀÌ¾î°¡ Å°º¸µåÀÇ »óÇÏÁÂ¿ì Å°¿Í ½ºÆäÀÌ½º¹Ù¸¦ ÀÌ¿ëÇÏ¿© ÀüÅõ±â¸¦ Á¶Á¾ÇÏ°í Àû ÀüÅõ±â¿Í º¸ÀÌÁö ¾Ê´Â Àú°Ý¼öÀÇ ÃÑ¾ËÀ» ÇÇÇÏ¸ç Àû ÀüÅõ±â °ø°Ý ¹× ÄÚÀÎÀ» ÅëÇØ Á¡¼ö¸¦ È¹µæÇÏ´Â ¾ÆÄÉÀÌµå °ÔÀÓÀÔ´Ï´Ù. 
+ì´ ê²Œìž„ì€ í”Œë ˆì´ì–´ê°€ í‚¤ë³´ë“œì˜ ìƒí•˜ì¢Œìš° í‚¤ì™€ ìŠ¤íŽ˜ì´ìŠ¤ë°”ë¥¼ ì´ìš©í•˜ì—¬ ì „íˆ¬ê¸°ë¥¼ ì¡°ì¢…í•˜ê³  ì  ì „íˆ¬ê¸°ì™€ ë³´ì´ì§€ ì•ŠëŠ” ì €ê²©ìˆ˜ì˜ ì´ì•Œì„ í”¼í•˜ë©° ì  ì „íˆ¬ê¸° ê³µê²© ë° ì½”ì¸ì„ í†µí•´ ì ìˆ˜ë¥¼ íšë“í•˜ëŠ” ì•„ì¼€ì´ë“œ ê²Œìž„ìž…ë‹ˆë‹¤. 
 
-ÇÁ·ÎÁ§Æ®ÀÇ ÃÖÁ¾ ¸ñÇ¥´Â °£´ÜÇÑ Á¶ÀÛ¹ýÀ¸·Î ´©±¸³ª ½±°Ô Áñ±æ ¼ö ÀÖÁö¸¸, °­ÇÑ Áßµ¶¼ºÀ» °¡Á® ¿©·¯¹ø ÇÃ·¹ÀÌÇÏ°Ô ¸¸µå´Â °ÍÀÔ´Ï´Ù. °ú°Å ÃÑ¾Ë ÇÇÇÏ±â(ÇÏ´Ü ÁÂÃø)ÀÌ³ª ½º¸¶Æ®Æù ÃÊ±â °ÔÀÓ ½ÃÀåÀ» Áö¹èÇß´ø µå·¡°ï ÇÃ¶óÀÌ(ÇÏ´Ü ¿ìÃø)°ú °°ÀÌ °£´ÜÇÏÁö¸¸ ÀÚ²Ù ºüÁ®µé°Ô µÇ´Â °ÔÀÓµéÀ» °æÇèÇÑ ¹Ù ÀÖ½À´Ï´Ù. ÀÌ·¯ÇÑ °ÔÀÓµé¿¡¼­ ¿µ°¨À» ¹Þ¾Æ Ä£±¸¿Í Á¡¼ö ³»±â¸¦ ÇÏ°Å³ª ³ª¸¸ÀÇ ÃÖ°í Á¡¼ö °»½ÅÇÏ¸é¼­ Áö¼ÓÀûÀ¸·Î Áñ½Ç ¼ö ÀÖ´Â °ÔÀÓÀ» ¸¸µé°íÀÚ Çß½À´Ï´Ù.
+í”„ë¡œì íŠ¸ì˜ ìµœì¢… ëª©í‘œëŠ” ê°„ë‹¨í•œ ì¡°ìž‘ë²•ìœ¼ë¡œ ëˆ„êµ¬ë‚˜ ì‰½ê²Œ ì¦ê¸¸ ìˆ˜ ìžˆì§€ë§Œ, ê°•í•œ ì¤‘ë…ì„±ì„ ê°€ì ¸ ì—¬ëŸ¬ë²ˆ í”Œë ˆì´í•˜ê²Œ ë§Œë“œëŠ” ê²ƒìž…ë‹ˆë‹¤. ê³¼ê±° ì´ì•Œ í”¼í•˜ê¸°(í•˜ë‹¨ ì¢Œì¸¡)ì´ë‚˜ ìŠ¤ë§ˆíŠ¸í° ì´ˆê¸° ê²Œìž„ ì‹œìž¥ì„ ì§€ë°°í–ˆë˜ ë“œëž˜ê³¤ í”Œë¼ì´(í•˜ë‹¨ ìš°ì¸¡)ê³¼ ê°™ì´ ê°„ë‹¨í•˜ì§€ë§Œ ìžê¾¸ ë¹ ì ¸ë“¤ê²Œ ë˜ëŠ” ê²Œìž„ë“¤ì„ ê²½í—˜í•œ ë°” ìžˆìŠµë‹ˆë‹¤. ì´ëŸ¬í•œ ê²Œìž„ë“¤ì—ì„œ ì˜ê°ì„ ë°›ì•„ ì¹œêµ¬ì™€ ì ìˆ˜ ë‚´ê¸°ë¥¼ í•˜ê±°ë‚˜ ë‚˜ë§Œì˜ ìµœê³  ì ìˆ˜ ê°±ì‹ í•˜ë©´ì„œ ì§€ì†ì ìœ¼ë¡œ ì¦ì‹¤ ìˆ˜ ìžˆëŠ” ê²Œìž„ì„ ë§Œë“¤ê³ ìž í–ˆìŠµë‹ˆë‹¤.
 
-°ÔÀÓÀÇ ÁÖ¿ä Æ¯Â¡°ú ÇÃ·¹ÀÌ ¹æ¹ýÀº ÀÌÈÄ °ÔÀÓ ÇÃ·¹ÀÌ ¼³¸í ÆÄÆ®¿¡¼­ ´õ ÀÚ¼¼ÇÏ°Ô ¼³¸íµå¸®°Ú½À´Ï´Ù.
+ê²Œìž„ì˜ ì£¼ìš” íŠ¹ì§•ê³¼ í”Œë ˆì´ ë°©ë²•ì€ ì´í›„ ê²Œìž„ í”Œë ˆì´ ì„¤ëª… íŒŒíŠ¸ì—ì„œ ë” ìžì„¸í•˜ê²Œ ì„¤ëª…ë“œë¦¬ê² ìŠµë‹ˆë‹¤.
 
 <p align="center">
 <img src="https://github.com/minseok1897/oss_personal_project_phase1/assets/127393443/f4b636eb-1b5f-42a3-bca3-adadd6ee678d" width="200" height="200"/>     
@@ -26,118 +26,118 @@
 </p>
 
 
-### 2. ?Áö¿ø Operating System ¹× ½ÇÇà ¹æ¹ý
+### 2. ðŸ’»ì§€ì› Operating System ë° ì‹¤í–‰ ë°©ë²•
 ***
-ÇØ´ç °ÔÀÓÀº Python°ú Pygame ¶óÀÌºê·¯¸®¸¦ »ç¿ëÇÏ°í ÀÖÀ¸¸ç Áö¿øÇÏ´Â ¿î¿µ Ã¼Á¦´Â ´ÙÀ½°ú °°½À´Ï´Ù.
+í•´ë‹¹ ê²Œìž„ì€ Pythonê³¼ Pygame ë¼ì´ë¸ŒëŸ¬ë¦¬ë¥¼ ì‚¬ìš©í•˜ê³  ìžˆìœ¼ë©° ì§€ì›í•˜ëŠ” ìš´ì˜ ì²´ì œëŠ” ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤.
 <p align="center">
 
-|OS|Áö¿ø¿©ºÎ|
+|OS|ì§€ì›ì—¬ë¶€|
 |------|---|
-|Windows|O|
-|Mac|°ËÁõ x|
-|Linux|O|
+|Windows|â­•ï¸|
+|Mac|ê²€ì¦ âŒ|
+|Linux|â­•ï¸|
 </p>
 
-### ½ÇÇà¹æ¹ý
+### ì‹¤í–‰ë°©ë²•
 #### Windows
-1. ÇØ´ç ÇÁ·ÎÁ§Æ®¸¦ ´Ù¿î·Îµå ÇÑ´Ù.
-2. python 3.12¸¦ ¼³Ä¡ÇÑ´Ù
-3. ÅÍ¹Ì³Î ¶Ç´Â ¸í·É ÇÁ·ÒÇÁÆ®¿¡¼­ ´ÙÀ½ ¸í·É¾î¸¦ ÅëÇØ PygameÀ» ¼³Ä¡ÇÑ´Ù.
+1. í•´ë‹¹ í”„ë¡œì íŠ¸ë¥¼ ë‹¤ìš´ë¡œë“œ í•œë‹¤.
+2. python 3.12ë¥¼ ì„¤ì¹˜í•œë‹¤
+3. í„°ë¯¸ë„ ë˜ëŠ” ëª…ë ¹ í”„ë¡¬í”„íŠ¸ì—ì„œ ë‹¤ìŒ ëª…ë ¹ì–´ë¥¼ í†µí•´ Pygameì„ ì„¤ì¹˜í•œë‹¤.
 
     ```sh
     pip3 install pygame
     ```
 
-4. ÀçºÎÆÃ ÈÄ ´Ù¿î·ÎµåµÈ ÇÁ·ÎÁ§Æ® µð·ºÅä¸®¿¡¼­ python3 main.py¸¦ ½ÇÇàÇÏ¸é °ÔÀÓ Ã¢ÀÌ ¶ß¸é¼­ ½ÇÇàµÈ´Ù.
+4. ìž¬ë¶€íŒ… í›„ ë‹¤ìš´ë¡œë“œëœ í”„ë¡œì íŠ¸ ë””ë ‰í† ë¦¬ì—ì„œ python3 main.pyë¥¼ ì‹¤í–‰í•˜ë©´ ê²Œìž„ ì°½ì´ ëœ¨ë©´ì„œ ì‹¤í–‰ëœë‹¤.
 
 #### Mac
 
- Mac È¯°æ ¿ª½Ã PygameÀÌ ¼³Ä¡µÇ¾îÀÖ´Â È¯°æ¿¡¼­ main.py¸¦ ½ÇÇàÇÒ °æ¿ì ±¸µ¿ÀÌ µÉ °ÍÀÔ´Ï´Ù.(°ËÁõ x)
+ Mac í™˜ê²½ ì—­ì‹œ Pygameì´ ì„¤ì¹˜ë˜ì–´ìžˆëŠ” í™˜ê²½ì—ì„œ main.pyë¥¼ ì‹¤í–‰í•  ê²½ìš° êµ¬ë™ì´ ë  ê²ƒìž…ë‹ˆë‹¤.(ê²€ì¦ x)
 
 #### Linux
-1. git cloneÀ» ÅëÇØ ÆÄÀÏÀ» ´Ù¿î·Îµå ÇÑ´Ù
+1. git cloneì„ í†µí•´ íŒŒì¼ì„ ë‹¤ìš´ë¡œë“œ í•œë‹¤
    ```sh
    git clone https://github.com/minseok1897/oss_personal_project_phase1/commits/master/
    cd oss_personal_project_phase1
    ```
-2. pygameÀ» ¼³Ä¡ÇÑ´Ù
+2. pygameì„ ì„¤ì¹˜í•œë‹¤
    ```sh
    sudo pip3 install pygame
    ```
-3. °ÔÀÓÀ» ½ÇÇàÇÑ´Ù
+3. ê²Œìž„ì„ ì‹¤í–‰í•œë‹¤
    ```sh
    python3 main.py
    ```
 
-**µµÄ¿»ç¿ë½Ã (ÁÖÀÇ: ¿©·¯°¡Áö ¹ö±×·Î ÀÎÇØ µµÄ¿´ë½Å À§ÀÇ ¹æ¹ýÀ» »ç¿ëÇÏ¿© ½ÇÇàÇÒ °ÍÀ» ÃßÃµÇÕ´Ï´Ù)**
-1. git cloneÀ» ÅëÇØ ÆÄÀÏÀ» ´Ù¿î·Îµå ÇÑ´Ù
+**ë„ì»¤ì‚¬ìš©ì‹œ (ì£¼ì˜: ì—¬ëŸ¬ê°€ì§€ ë²„ê·¸ë¡œ ì¸í•´ ë„ì»¤ëŒ€ì‹  ìœ„ì˜ ë°©ë²•ì„ ì‚¬ìš©í•˜ì—¬ ì‹¤í–‰í•  ê²ƒì„ ì¶”ì²œí•©ë‹ˆë‹¤)**
+1. git cloneì„ í†µí•´ íŒŒì¼ì„ ë‹¤ìš´ë¡œë“œ í•œë‹¤
    ```sh
    git clone https://github.com/minseok1897/oss_personal_project_phase1/commits/master/
    cd oss_personal_project_phase1
    ```
-2. Docker¸¦ ´Ù¿î·Îµå ÇÑ´Ù
-3. DockerfileÀ» buildÇÑ´Ù
+2. Dockerë¥¼ ë‹¤ìš´ë¡œë“œ í•œë‹¤
+3. Dockerfileì„ buildí•œë‹¤
    ```sh
    docker build -t airplane:0.1 .
    ```
-4. docker container¸¦ ½ÇÇàÇÑ´Ù
+4. docker containerë¥¼ ì‹¤í–‰í•œë‹¤
    ```sh
     docker run -it airplane:0.1
     ```
-5. ÄÁÅ×ÀÌ³Ê ½ÇÇà°ú µ¿½Ã¿¡ °ÔÀÓÀÌ ½ÃÀÛµÈ´Ù.
+5. ì»¨í…Œì´ë„ˆ ì‹¤í–‰ê³¼ ë™ì‹œì— ê²Œìž„ì´ ì‹œìž‘ëœë‹¤.
 
 
 
-### 3. ?°ÔÀÓ ½ÇÇà ¿¹½Ã
+### 3. ðŸŽ®ê²Œìž„ ì‹¤í–‰ ì˜ˆì‹œ
 ***
-°ÔÀÓÀÌ ½ÃÀÛµÇ¸é À¯Àú´Â Àû ÀüÅõ±â¿¡¼­ ¹ß»çµÇ´Â ÃÑ¾Ë(»¡°£»ö ±¸Ã¼)¸¦ ÇÇÇÏ¸ç ÄÚÀÎ(³ë¶õ»ö »ç°¢Çü)À» È¹µæÇÏ¿©¾ß ÇÕ´Ï´Ù. Àû ÀüÅõ±â¸¦ °ø°ÝÇÏ¿© Á¦°ÅÇÒ ¼öµµ ÀÖ½À´Ï´Ù. ´Ù¸¸ º¸ÀÌÁö ¾Ê´Â Àú°Ý¼ö°¡ ¹ß»çÇÏ´Â À¯µµÅº(ÃÊ·Ï»ö ±¸Ã¼)À» Á¶½ÉÇØ¾ß ÇÕ´Ï´Ù?
+ê²Œìž„ì´ ì‹œìž‘ë˜ë©´ ìœ ì €ëŠ” ì  ì „íˆ¬ê¸°ì—ì„œ ë°œì‚¬ë˜ëŠ” ì´ì•Œ(ë¹¨ê°„ìƒ‰ êµ¬ì²´)ë¥¼ í”¼í•˜ë©° ì½”ì¸(ë…¸ëž€ìƒ‰ ì‚¬ê°í˜•)ì„ íšë“í•˜ì—¬ì•¼ í•©ë‹ˆë‹¤. ì  ì „íˆ¬ê¸°ë¥¼ ê³µê²©í•˜ì—¬ ì œê±°í•  ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤. ë‹¤ë§Œ ë³´ì´ì§€ ì•ŠëŠ” ì €ê²©ìˆ˜ê°€ ë°œì‚¬í•˜ëŠ” ìœ ë„íƒ„(ì´ˆë¡ìƒ‰ êµ¬ì²´)ì„ ì¡°ì‹¬í•´ì•¼ í•©ë‹ˆë‹¤?
 
 <p align="center">
 <img src="https://github.com/minseok1897/oss_personal_project_phase1/assets/127393443/8883d0eb-b6b0-4927-9512-bf31ec3fc61e" width="300" height="300"/>
 </p>
 
-### 4. ?°ÔÀÓ ÇÃ·¹ÀÌ ¼³¸í
+### 4. ðŸŽ®ê²Œìž„ í”Œë ˆì´ ì„¤ëª…
 ***
-ÀüÅõ±â °ÔÀÓ(Flying an Airplane)ÀÇ Á¶ÀÛ¹ý°ú °ÔÀÓ ¸ñÇ¥¿¡ °üÇØ ¼³¸íµå¸®°Ú½À´Ï´Ù.
+ì „íˆ¬ê¸° ê²Œìž„(Flying an Airplane)ì˜ ì¡°ìž‘ë²•ê³¼ ê²Œìž„ ëª©í‘œì— ê´€í•´ ì„¤ëª…ë“œë¦¬ê² ìŠµë‹ˆë‹¤.
 
-#### Á¶ÀÛ¹ý
-+ ¡è : À¯ÀúÀÇ ÀüÅõ±â¸¦ À§·Î ÀÌµ¿½ÃÅµ´Ï´Ù.
-+ ¡é : À¯ÀúÀÇ ÀüÅõ±â¸¦ ¾Æ·¡·Î ÀÌµ¿½ÃÅµ´Ï´Ù.
-+ ¡ç : À¯ÀúÀÇ ÀüÅõ±â¸¦ ¿ÞÂÊÀ¸·Î ÀÌµ¿½ÃÅµ´Ï´Ù.
-+ ¡æ : À¯ÀúÀÇ ÀüÅõ±â¸¦ ¿À¸¥ÂÊÀ¸·Î ÀÌµ¿½ÃÅµ´Ï´Ù.
-+ SPACEBAR : À¯ÀúÀÇ ÀüÅõ±â¿¡¼­ Àû ÀüÅõ±â ¹æÇâÀ¸·Î ÃÑ¾ËÀ» ½õ´Ï´Ù.
-#### °ÔÀÓ ¸ñÇ¥
-+ Àû ÀüÅõ±â¸¦ À¯ÀúÀÇ ÃÑ¾Ë·Î ¸ÂÃß°Å³ª ÄÚÀÎÀ» È¹µæÇÏ¸é Á¡¼ö 1Á¡À» ¾ò°Ô µË´Ï´Ù.
-+ °ÔÀÓÀ» ¹Ýº¹ ÇÃ·¹ÀÌ ÇÏ¿© ÃÖ°í Á¡¼ö¸¦ °»½ÅÇÕ´Ï´Ù.
-#### °ÔÀÓ ÇÃ·¹ÀÌ
-1. **°ÔÀÓ ½ÃÀÛ**
+#### ì¡°ìž‘ë²•
++ â†‘ : ìœ ì €ì˜ ì „íˆ¬ê¸°ë¥¼ ìœ„ë¡œ ì´ë™ì‹œí‚µë‹ˆë‹¤.
++ â†“ : ìœ ì €ì˜ ì „íˆ¬ê¸°ë¥¼ ì•„ëž˜ë¡œ ì´ë™ì‹œí‚µë‹ˆë‹¤.
++ â† : ìœ ì €ì˜ ì „íˆ¬ê¸°ë¥¼ ì™¼ìª½ìœ¼ë¡œ ì´ë™ì‹œí‚µë‹ˆë‹¤.
++ â†’ : ìœ ì €ì˜ ì „íˆ¬ê¸°ë¥¼ ì˜¤ë¥¸ìª½ìœ¼ë¡œ ì´ë™ì‹œí‚µë‹ˆë‹¤.
++ SPACEBAR : ìœ ì €ì˜ ì „íˆ¬ê¸°ì—ì„œ ì  ì „íˆ¬ê¸° ë°©í–¥ìœ¼ë¡œ ì´ì•Œì„ ì©ë‹ˆë‹¤.
+#### ê²Œìž„ ëª©í‘œ
++ ì  ì „íˆ¬ê¸°ë¥¼ ìœ ì €ì˜ ì´ì•Œë¡œ ë§žì¶”ê±°ë‚˜ ì½”ì¸ì„ íšë“í•˜ë©´ ì ìˆ˜ 1ì ì„ ì–»ê²Œ ë©ë‹ˆë‹¤.
++ ê²Œìž„ì„ ë°˜ë³µ í”Œë ˆì´ í•˜ì—¬ ìµœê³  ì ìˆ˜ë¥¼ ê°±ì‹ í•©ë‹ˆë‹¤.
+#### ê²Œìž„ í”Œë ˆì´
+1. **ê²Œìž„ ì‹œìž‘**
    
-    + °ÔÀÓÀÌ ½ÃÀÛµÇ¸é ¾Æ¹« Å°¸¦ ´­·¯ ½ÃÀÛÇÕ´Ï´Ù.
-2. **°ÔÀÓ Áß**
+    + ê²Œìž„ì´ ì‹œìž‘ë˜ë©´ ì•„ë¬´ í‚¤ë¥¼ ëˆŒëŸ¬ ì‹œìž‘í•©ë‹ˆë‹¤.
+2. **ê²Œìž„ ì¤‘**
    
-   + **ÀüÅõ±â ÀÌµ¿** : »óÇÏÁÂ¿ì Å°¸¦ ÅëÇØ À¯Àú ºñÇà±â¸¦ ÀÌµ¿½ÃÅ³ ¼ö ÀÖ½À´Ï´Ù.
-   + **Àû ÀüÅõ±â** : Àû ÀüÅõ±â´Â ÃÖ´ë 4±â±îÁö µîÀåÇÏ¸ç, °¢ ºñÇà±â´Â ·£´ýÀ¸·Î Á¤ÇØÁø ÃÑ¾ËÀÇ °³¼ö¿Í ¼Óµµ·Î À¯Àú¸¦ °ø°ÝÇÕ´Ï´Ù. À¯ÀúÀÇ ÃÑ¾Ë·Î Àû ÀüÅõ±â¸¦ °ø°ÝÇÏ¿© ¼º°øÇÏ¸é Á¡¼ö 1Á¡À» È¹µæÇÕ´Ï´Ù.
-   + **À¯µµÅº** : º¸ÀÌÁö ¾Ê´Â °÷¿¡¼­ À¯ÀúÀÇ ÀüÅõ±â¸¦ ÇâÇØ À¯µµÅºÀ» ¹ß»çÇÕ´Ï´Ù. À¯µµÅºÀº ÃÊ·Ï»öÀ¸·Î Ç¥½ÃµË´Ï´Ù.
-   + **ÄÚÀÎ** : ÄÚÀÎÀ» È¹µæÇÏ¸é Á¡¼ö¸¦ 1Á¡ È¹µæÇÕ´Ï´Ù. ÄÚÀÎÀº ³ë¶õ»öÀ¸·Î Ç¥½ÃµË´Ï´Ù.
-   + **Á¡¼ö ½Ã½ºÅÛ**: ¾ÕÀû ÀüÅõ±â¸¦ °ø°ÝÇÏ°Å³ª ÄÚÀÎÀ» È¹µæÇÏ¸é 1Á¡¾¿ Áõ°¡ÇÏ¸ç, 5Á¡¸¶´Ù FPS°¡ 1¾¿ Áõ°¡ÇÏ¿© ³­ÀÌµµ°¡ ¿Ã¶ó°©´Ï´Ù.
-3. **°ÔÀÓ ¿À¹ö ¹× Àç½ÃÀÛ**
+   + **ì „íˆ¬ê¸° ì´ë™** : ìƒí•˜ì¢Œìš° í‚¤ë¥¼ í†µí•´ ìœ ì € ë¹„í–‰ê¸°ë¥¼ ì´ë™ì‹œí‚¬ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+   + **ì  ì „íˆ¬ê¸°** : ì  ì „íˆ¬ê¸°ëŠ” ìµœëŒ€ 4ê¸°ê¹Œì§€ ë“±ìž¥í•˜ë©°, ê° ë¹„í–‰ê¸°ëŠ” ëžœë¤ìœ¼ë¡œ ì •í•´ì§„ ì´ì•Œì˜ ê°œìˆ˜ì™€ ì†ë„ë¡œ ìœ ì €ë¥¼ ê³µê²©í•©ë‹ˆë‹¤. ìœ ì €ì˜ ì´ì•Œë¡œ ì  ì „íˆ¬ê¸°ë¥¼ ê³µê²©í•˜ì—¬ ì„±ê³µí•˜ë©´ ì ìˆ˜ 1ì ì„ íšë“í•©ë‹ˆë‹¤.
+   + **ìœ ë„íƒ„** : ë³´ì´ì§€ ì•ŠëŠ” ê³³ì—ì„œ ìœ ì €ì˜ ì „íˆ¬ê¸°ë¥¼ í–¥í•´ ìœ ë„íƒ„ì„ ë°œì‚¬í•©ë‹ˆë‹¤. ìœ ë„íƒ„ì€ ì´ˆë¡ìƒ‰ìœ¼ë¡œ í‘œì‹œë©ë‹ˆë‹¤.
+   + **ì½”ì¸** : ì½”ì¸ì„ íšë“í•˜ë©´ ì ìˆ˜ë¥¼ 1ì  íšë“í•©ë‹ˆë‹¤. ì½”ì¸ì€ ë…¸ëž€ìƒ‰ìœ¼ë¡œ í‘œì‹œë©ë‹ˆë‹¤.
+   + **ì ìˆ˜ ì‹œìŠ¤í…œ**: ì•žì  ì „íˆ¬ê¸°ë¥¼ ê³µê²©í•˜ê±°ë‚˜ ì½”ì¸ì„ íšë“í•˜ë©´ 1ì ì”© ì¦ê°€í•˜ë©°, 5ì ë§ˆë‹¤ FPSê°€ 1ì”© ì¦ê°€í•˜ì—¬ ë‚œì´ë„ê°€ ì˜¬ë¼ê°‘ë‹ˆë‹¤.
+3. **ê²Œìž„ ì˜¤ë²„ ë° ìž¬ì‹œìž‘**
    
-   + °ÔÀÓÀº ÃÑ 3°³ÀÇ ¿äÀÎ¿¡ ÀÇÇØ Á¾·áµË´Ï´Ù.
-     + Ã¹¹øÂ°: º®¿¡ ºÎµúÈ÷´Â °æ¿ì(ÇÏ´Ü ÁÂÃø)
-     + µÎ¹øÂ°: Àû¿¡ ÀÇÇØ °ø°Ý ´çÇÏ´Â °æ¿ì(ÇÏ´Ü Áß¾Ó)
-     + ¼¼¹øÂ°: Àû ºñÇà±â¿¡ ºÎµúÈ÷´Â °æ¿ì(ÇÏ´Ü ¿ìÃø)
+   + ê²Œìž„ì€ ì´ 3ê°œì˜ ìš”ì¸ì— ì˜í•´ ì¢…ë£Œë©ë‹ˆë‹¤.
+     + ì²«ë²ˆì§¸: ë²½ì— ë¶€ë”ªížˆëŠ” ê²½ìš°(í•˜ë‹¨ ì¢Œì¸¡)
+     + ë‘ë²ˆì§¸: ì ì— ì˜í•´ ê³µê²© ë‹¹í•˜ëŠ” ê²½ìš°(í•˜ë‹¨ ì¤‘ì•™)
+     + ì„¸ë²ˆì§¸: ì  ë¹„í–‰ê¸°ì— ë¶€ë”ªížˆëŠ” ê²½ìš°(í•˜ë‹¨ ìš°ì¸¡)
   <p align="center">
   <img src="https://github.com/minseok1897/oss_personal_project_phase1/assets/127393443/a2d7a937-ffee-4b77-a672-24fc7123417b" width="200" height="200"/>
   <img src="https://github.com/minseok1897/oss_personal_project_phase1/assets/127393443/b9051515-57f4-4232-94dd-1a222992df5e" width="200" height="200"/>
   <img src="https://github.com/minseok1897/oss_personal_project_phase1/assets/127393443/f1a27f50-5db1-42ca-8617-b7047c263492" width="200" height="200"/>
 </p>
 
-   + °ÔÀÓÀÌ Á¾·áµÇ¸é °ÔÀÓ ¿À¹ö È­¸éÀÌ ³ªÅ¸³ª°í, Áö±Ý±îÁöÀÇ ÃÖ°í±â·ÏÀ» Ç¥½ÃÇØÁÝ´Ï´Ù. ÃÖ°í ±â·ÏÀ» °»½ÅÇÏ¸é ÃàÇÏ¸Þ¼¼Áö ¶ÇÇÑ Ç¥½ÃÇØÁÝ´Ï´Ù.
-   + °ÔÀÓÀ» Àç½ÃÀÛÇÏ·Á¸é °ÔÀÓ¿À¹ö È­¸é¿¡¼­ ¾Æ¹« Å°¸¦ ´­·¯ Àç½ÃÀÛÇÒ ¼ö ÀÖ½À´Ï´Ù.
+   + ê²Œìž„ì´ ì¢…ë£Œë˜ë©´ ê²Œìž„ ì˜¤ë²„ í™”ë©´ì´ ë‚˜íƒ€ë‚˜ê³ , ì§€ê¸ˆê¹Œì§€ì˜ ìµœê³ ê¸°ë¡ì„ í‘œì‹œí•´ì¤ë‹ˆë‹¤. ìµœê³  ê¸°ë¡ì„ ê°±ì‹ í•˜ë©´ ì¶•í•˜ë©”ì„¸ì§€ ë˜í•œ í‘œì‹œí•´ì¤ë‹ˆë‹¤.
+   + ê²Œìž„ì„ ìž¬ì‹œìž‘í•˜ë ¤ë©´ ê²Œìž„ì˜¤ë²„ í™”ë©´ì—ì„œ ì•„ë¬´ í‚¤ë¥¼ ëˆŒëŸ¬ ìž¬ì‹œìž‘í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
-### 5. ÄÚµå ¼³¸í
+### 5. ì½”ë“œ ì„¤ëª…
 ***
-+ class PlayerBullet(): À¯Àú ºñÇà±âÀÇ °ø°ÝÀ» ±¸ÇöÇÏ±â À§ÇÑ classÀÔ´Ï´Ù. »ö±òÀº °ËÁ¤»öÀ¸·Î Ç¥½ÃµÇ¸ç 10,10 »çÀÌÁî¸¦ °¡Áö°Ô µË´Ï´Ù. ¶ÇÇÑ È­¸éÀ» ³Ñ¾î°¡°Ô µÇ¸é »èÁ¦µÇµµ·Ï ÇÏ¿´½À´Ï´Ù.
++ class PlayerBullet(): ìœ ì € ë¹„í–‰ê¸°ì˜ ê³µê²©ì„ êµ¬í˜„í•˜ê¸° ìœ„í•œ classìž…ë‹ˆë‹¤. ìƒ‰ê¹”ì€ ê²€ì •ìƒ‰ìœ¼ë¡œ í‘œì‹œë˜ë©° 10,10 ì‚¬ì´ì¦ˆë¥¼ ê°€ì§€ê²Œ ë©ë‹ˆë‹¤. ë˜í•œ í™”ë©´ì„ ë„˜ì–´ê°€ê²Œ ë˜ë©´ ì‚­ì œë˜ë„ë¡ í•˜ì˜€ìŠµë‹ˆë‹¤.
 ```python
 class PlayerBullet(pygame.sprite.Sprite):
     def __init__(self, x, y):
@@ -154,17 +154,17 @@ class PlayerBullet(pygame.sprite.Sprite):
         if self.rect.bottom < 0:
             self.kill()
 ```
-+ class Bullet() : Àû ºñÇà±âÀÇ °ø°ÝÀ» ±¸ÇöÇÏ±â À§ÇÑ classÀÔ´Ï´Ù. PlayerBullet°ú ±¸Çö ¹æ½ÄÀº µ¿ÀÏÇÏ¸ç ¹æÇâÀÌ ¹Ý´ëÀÌ¸ç »¡°£»öÀ¸·Î Ç¥½ÃµË´Ï´Ù.
-+ class SniperBullet() : À¯µµÅº °ø°ÝÀ» ±¸ÇöÇÏ±â À§ÇÑ classÀÔ´Ï´Ù. math¸¦ importÇÏ¿©¼­ °¢µµ¸¦ °è»êÇÑµÚ ¹ß»çÇÏ°Ô µË´Ï´Ù.
++ class Bullet() : ì  ë¹„í–‰ê¸°ì˜ ê³µê²©ì„ êµ¬í˜„í•˜ê¸° ìœ„í•œ classìž…ë‹ˆë‹¤. PlayerBulletê³¼ êµ¬í˜„ ë°©ì‹ì€ ë™ì¼í•˜ë©° ë°©í–¥ì´ ë°˜ëŒ€ì´ë©° ë¹¨ê°„ìƒ‰ìœ¼ë¡œ í‘œì‹œë©ë‹ˆë‹¤.
++ class SniperBullet() : ìœ ë„íƒ„ ê³µê²©ì„ êµ¬í˜„í•˜ê¸° ìœ„í•œ classìž…ë‹ˆë‹¤. mathë¥¼ importí•˜ì—¬ì„œ ê°ë„ë¥¼ ê³„ì‚°í•œë’¤ ë°œì‚¬í•˜ê²Œ ë©ë‹ˆë‹¤.
 ```python
 class SniperBullet(pygame.sprite.Sprite):
-    //»ý·«
+    //ìƒëžµ
         angle = math.atan2(target_y - y, target_x - x)
         self.speed_x = math.cos(angle) * 5
         self.speed_y = math.sin(angle) * 5
-    // »ý·«
+    // ìƒëžµ
 ```
-+ class EnemyAirplane() : Àû ºñÇà±â ¸ð½ÀÀ» ³ªÅ¸³»±â À§ÇÑ classÀÔ´Ï´Ù. ÃÑ¾ËÀÇ °³¼ö¿Í ½ºÇÇµå´Â ·£´ýÇÏ°Ô ±¸ÇÒ ¼ö ÀÖ°Ô ÇÏ¿´°í ÃÑ¾Ë¤·¸£ ½î´Â ÇÔ¼ö°¡ ±¸ÇöµÇ¾î ÀÖ½À´Ï´Ù.
++ class EnemyAirplane() : ì  ë¹„í–‰ê¸° ëª¨ìŠµì„ ë‚˜íƒ€ë‚´ê¸° ìœ„í•œ classìž…ë‹ˆë‹¤. ì´ì•Œì˜ ê°œìˆ˜ì™€ ìŠ¤í”¼ë“œëŠ” ëžœë¤í•˜ê²Œ êµ¬í•  ìˆ˜ ìžˆê²Œ í•˜ì˜€ê³  ì´ì•Œã…‡ë¥´ ì˜ëŠ” í•¨ìˆ˜ê°€ êµ¬í˜„ë˜ì–´ ìžˆìŠµë‹ˆë‹¤.
 ```python
 class EnemyAirplane(pygame.sprite.Sprite):
     def __init__(self, x, y):
@@ -199,9 +199,9 @@ class EnemyAirplane(pygame.sprite.Sprite):
             bullets.add(bullet)
             self.bullets_fired += 1
 ```
-+ class Coin() : Á¡¼ö È¹µæ ½Ã½ºÅÛÀ» ±¸ÇöÇÏ±â À§ÇÑ class ÀÔ´Ï´Ù. ³ë¶õ»öÀ¸·Î Ç¥½ÃµÇ¾î ÀÖ½À´Ï´Ù.
-+ def main() : ÇÁ·Î±×·¥À» ½ÃÀÛÇÒ ¶§ ÇÊ¿äÇÑ ±âº» ¼¼ÆÃ ¹× °ÔÀÓ ½ÃÀÛ ±¸ÇöÀ» À§ÇÑ ÇÔ¼öÀÔ´Ï´Ù.
-+ def runGame() : ½ÇÁ¦ °ÔÀÓÀÌ ÁøÇàµÇ´Â µ¿¾È ¹Ýº¹µÇ´Â ÇÔ¼öÀÔ´Ï´Ù. ÀüÅõ±â ÀÌµ¿ÇÏ´Â °úÁ¤Àº ¾Æ·¡¿Í °°½À´Ï´Ù.
++ class Coin() : ì ìˆ˜ íšë“ ì‹œìŠ¤í…œì„ êµ¬í˜„í•˜ê¸° ìœ„í•œ class ìž…ë‹ˆë‹¤. ë…¸ëž€ìƒ‰ìœ¼ë¡œ í‘œì‹œë˜ì–´ ìžˆìŠµë‹ˆë‹¤.
++ def main() : í”„ë¡œê·¸ëž¨ì„ ì‹œìž‘í•  ë•Œ í•„ìš”í•œ ê¸°ë³¸ ì„¸íŒ… ë° ê²Œìž„ ì‹œìž‘ êµ¬í˜„ì„ ìœ„í•œ í•¨ìˆ˜ìž…ë‹ˆë‹¤.
++ def runGame() : ì‹¤ì œ ê²Œìž„ì´ ì§„í–‰ë˜ëŠ” ë™ì•ˆ ë°˜ë³µë˜ëŠ” í•¨ìˆ˜ìž…ë‹ˆë‹¤. ì „íˆ¬ê¸° ì´ë™í•˜ëŠ” ê³¼ì •ì€ ì•„ëž˜ì™€ ê°™ìŠµë‹ˆë‹¤.
 ```python
 for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -232,9 +232,9 @@ for event in pygame.event.get():
             x+=20
         
 ```
-+ def drawPressKeyMSG() : °ÔÀÓ ½ÃÀÛ È­¸é ¹× °ÔÀÓ ¿À¹ö È­¸é¿¡¼­ ½ÃÀÛÇÏ´Â ¹ýÀ» ¾Ë¸®±â À§ÇÑ ÇÔ¼öÀÔ´Ï´Ù. Ã³À½ ½ÃÀÛ°ú Àç½ÃÀÛ ½Ã ¾È³» ¹®±¸¸¦ ´Þ¸® ÇÏ¿´½À´Ï´Ù.
-+ def showStartScreen() : °ÔÀÓ ½ÃÀÛ È­¸éÀ» ±¸ÇöÇÏ±â À§ÇÑ ÇÔ¼öÀÔ´Ï´Ù. Á¦¸ñ Áß ÇÑ ºÎºÐÀº µ¹¾Æ°¡°Ô ÇÏ¿´½À´Ï´Ù.
-+ def showGameOver() : °ÔÀÓ ¿À¹ö È­¸éÀ» ±¸ÇöÇÏ±â À§ÇÑ ÇÔ¼öÀÔ´Ï´Ù. °ÔÀÓ ¿À¹ö¿¡ ´ëÇÑ ÀÌÀ¯¸¦ Ç¥½ÃÇÏ±â À§ÇØ STATUS º¯¼ö¸¦ µÎ¾î °ü¸®ÇÏ¿´½À´Ï´Ù. ¶ÇÇÑ ±âÁ¸ ±â·ÏÀ» ²£À» ¶§µµ ÃàÇÏ ¹®±¸¸¦ Ãß°¡ÇÏ¿´½À´Ï´Ù.
++ def drawPressKeyMSG() : ê²Œìž„ ì‹œìž‘ í™”ë©´ ë° ê²Œìž„ ì˜¤ë²„ í™”ë©´ì—ì„œ ì‹œìž‘í•˜ëŠ” ë²•ì„ ì•Œë¦¬ê¸° ìœ„í•œ í•¨ìˆ˜ìž…ë‹ˆë‹¤. ì²˜ìŒ ì‹œìž‘ê³¼ ìž¬ì‹œìž‘ ì‹œ ì•ˆë‚´ ë¬¸êµ¬ë¥¼ ë‹¬ë¦¬ í•˜ì˜€ìŠµë‹ˆë‹¤.
++ def showStartScreen() : ê²Œìž„ ì‹œìž‘ í™”ë©´ì„ êµ¬í˜„í•˜ê¸° ìœ„í•œ í•¨ìˆ˜ìž…ë‹ˆë‹¤. ì œëª© ì¤‘ í•œ ë¶€ë¶„ì€ ëŒì•„ê°€ê²Œ í•˜ì˜€ìŠµë‹ˆë‹¤.
++ def showGameOver() : ê²Œìž„ ì˜¤ë²„ í™”ë©´ì„ êµ¬í˜„í•˜ê¸° ìœ„í•œ í•¨ìˆ˜ìž…ë‹ˆë‹¤. ê²Œìž„ ì˜¤ë²„ì— ëŒ€í•œ ì´ìœ ë¥¼ í‘œì‹œí•˜ê¸° ìœ„í•´ STATUS ë³€ìˆ˜ë¥¼ ë‘ì–´ ê´€ë¦¬í•˜ì˜€ìŠµë‹ˆë‹¤. ë˜í•œ ê¸°ì¡´ ê¸°ë¡ì„ ê¹¼ì„ ë•Œë„ ì¶•í•˜ ë¬¸êµ¬ë¥¼ ì¶”ê°€í•˜ì˜€ìŠµë‹ˆë‹¤.
 ```python
     if newscore ==1:
         bestSurf = gameOverFont3.render('You Break Record!!!!!!!! BEST SCORE:'+ str(HIGHSCORE), True, BLACK)
@@ -247,8 +247,8 @@ for event in pygame.event.get():
         reasonSurf = gameOverFont3.render('You hit enemies!', True, BLACK)
 
 ```
-+ def drawScore() : °ÔÀÓ Á¡¼ö¸¦ Ç¥½ÃÇÏ±â À§ÇÑ ÇÔ¼öÀÔ´Ï´Ù.
-+ def terminate() : °ÔÀÓ Á¾·á¸¦ ±¸ÇöÇÏ±â À§ÇÑ ÇÔ¼öÀÔ´Ï´Ù.
++ def drawScore() : ê²Œìž„ ì ìˆ˜ë¥¼ í‘œì‹œí•˜ê¸° ìœ„í•œ í•¨ìˆ˜ìž…ë‹ˆë‹¤.
++ def terminate() : ê²Œìž„ ì¢…ë£Œë¥¼ êµ¬í˜„í•˜ê¸° ìœ„í•œ í•¨ìˆ˜ìž…ë‹ˆë‹¤.
 
 
 ### 6. Reference
@@ -257,13 +257,13 @@ for event in pygame.event.get():
 
 [2] https://inventwithpython.com/pygame/chapter6.html "pygame-wormy"
 
-[3] https://ai-creator.tistory.com/522 "[ÆÄÀÌ½ã °£´ÜÇÑ °ÔÀÓ ¸¸µé±â]"
+[3] https://ai-creator.tistory.com/522 "[íŒŒì´ì¬ ê°„ë‹¨í•œ ê²Œìž„ ë§Œë“¤ê¸°]"
 
 ### 7. TODO List
 ***
-+ **°ÔÀÓ ¼³¸í ¹öÆ°** Ãß°¡ ¹× ±¸Çö
-+ **À¯Àú ºñÇà±â ½ºÅ³** Ãß°¡
-+ **À¯Àú ºñÇà±â °ø°Ý¿¡ ÀÇÇÑ Àû ºñÇà±â »ç¸Á** Ãß°¡
-+ **Á¡¼ö ½Ã½ºÅÛ** °³¼±
-+ **Àû º¸½º ºñÇà±â** Ãß°¡
-+ **ÀûÀÇ µîÀå ¹æÇâ** ´Ù¾çÈ­
++ **ê²Œìž„ ì„¤ëª… ë²„íŠ¼** ì¶”ê°€ ë° êµ¬í˜„
++ **ìœ ì € ë¹„í–‰ê¸° ìŠ¤í‚¬** ì¶”ê°€
++ **ìœ ì € ë¹„í–‰ê¸° ê³µê²©ì— ì˜í•œ ì  ë¹„í–‰ê¸° ì‚¬ë§** ì¶”ê°€
++ **ì ìˆ˜ ì‹œìŠ¤í…œ** ê°œì„ 
++ **ì  ë³´ìŠ¤ ë¹„í–‰ê¸°** ì¶”ê°€
++ **ì ì˜ ë“±ìž¥ ë°©í–¥** ë‹¤ì–‘í™”
