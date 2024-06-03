@@ -52,24 +52,40 @@
 
 #### Mac
 
-검증을 하지는 않았지만 Mac 환경 역시 Pygame이 설치되어있는 환경에서 main.py를 실행할 경우 구동이 될 것입니다.
+ Mac 환경 역시 Pygame이 설치되어있는 환경에서 main.py를 실행할 경우 구동이 될 것입니다.(검증 x)
 
 #### Linux
-1. Docker를 설치한다
-2. git clone을 통해 파일을 다운로드 한다
+1. git clone을 통해 파일을 다운로드 한다
    ```sh
    git clone https://github.com/minseok1897/oss_personal_project_phase1/commits/master/
    cd oss_personal_project_phase1
    ```
+2. pygame을 설치한다
+   ```sh
+   sudo pip3 install pygame
+   ```
+3. 게임을 실행한다
+   ```sh
+   python3 main.py
+   ```
+
+**도커사용시 (주의: 여러가지 버그로 인해 도커대신 위의 방법을 사용하여 실행할 것을 추천합니다)**
+1. git clone을 통해 파일을 다운로드 한다
+   ```sh
+   git clone https://github.com/minseok1897/oss_personal_project_phase1/commits/master/
+   cd oss_personal_project_phase1
+   ```
+2. Docker를 다운로드 한다
 3. Dockerfile을 build한다
    ```sh
    docker build -t airplane:0.1 .
    ```
 4. docker container를 실행한다
    ```sh
-    docker run -it airplane:0.1 /bin/bash
+    docker run -it airplane:0.1
     ```
 5. 컨테이너 실행과 동시에 게임이 시작된다.
+
 
 
 ### 3. ?게임 실행 예시

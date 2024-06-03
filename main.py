@@ -140,7 +140,8 @@ coins = pygame.sprite.Group()
 def main():
     global FPSCLOCK, DISPLAYSURF, BASICFONT
 
-    pygame.init()
+    pygame.display.init()
+    pygame.font.init()
     FPSCLOCK = pygame.time.Clock()
     DISPLAYSURF = pygame.display.set_mode((WIDTH, HEIGHT))
     BASICFONT = pygame.font.Font('freesansbold.ttf',18)

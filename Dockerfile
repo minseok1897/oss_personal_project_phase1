@@ -12,6 +12,12 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip install pygame
 
+RUN mkdir projects
+WORKDIR ./projects
+
+COPY . .
+
+RUN export XDG_RUNTIME_DIR=/run/user/$(id -u)
 
 ENTRYPOINT ["python"]
 CMD ["main.py"]
