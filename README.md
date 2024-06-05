@@ -3,18 +3,19 @@
 
 ## 📋목차
 1. 소개
-2. 지원 Operating System 및 실행 방법
-3. 게임 실행 예시
-4. 게임 플레이 설명
-5. 코드 설명
-6. Reference
-7. TODO List
+2. 구현 기능능
+3. 지원 Operating System 및 실행 방법
+4. 게임 실행 예시
+5. 게임 플레이 설명
+6. 코드 설명
+7. Reference
+8. TODO List
 
 
 
 ### 1. 소개💁
 ***
-이 게임은 플레이어가 키보드의 상하좌우 키와 스페이스바를 이용하여 전투기를 조종하고 적 전투기와 보이지 않는 저격수의 총알을 피하며 적 전투기 공격 및 코인을 통해 점수를 획득하는 아케이드 게임입니다. 
+이 게임은 플레이어가 키보드의 상하좌우 키와 스페이스바를 이용하여 전투기를 조종하고 적 전투기와 보이지 않는 저격수의 총알을 피하며 적 전투기 공격 및 코인을 통해 점수를 획득하는 슈팅 아케이드 게임입니다. 
 
 프로젝트의 최종 목표는 간단한 조작법으로 누구나 쉽게 즐길 수 있지만, 강한 중독성을 가져 여러번 플레이하게 만드는 것입니다. 과거 총알 피하기(하단 좌측)이나 스마트폰 초기 게임 시장을 지배했던 드래곤 플라이(하단 우측)과 같이 간단하지만 자꾸 빠져들게 되는 게임들을 경험한 바 있습니다. 이러한 게임들에서 영감을 받아 친구와 점수 내기를 하거나 나만의 최고 점수 갱신하면서 지속적으로 즐실 수 있는 게임을 만들고자 했습니다.
 
@@ -25,8 +26,18 @@
 <img src="https://github.com/minseok1897/oss_personal_project_phase1/assets/127393443/8a59130c-ba0f-4f8e-8911-599e72bc1551" width="250" height="200"/>
 </p>
 
+### 2. 구현 기능
+***
++ 상하좌우 키를 이용하여 유저 비행기 이동
++ 스페이스 바를 이용하여 유저 비행기에서 상대방 비행기 방면으로 공격
++ 적 비행기 등장과 적 비행기의 공격
++ 임의의 위치에서 날라오는 적의 유도탄 공격
++ 공격을 맞았을 때 게임 종료
++ 코인 및 적 비행기 공격 성공시 점수 추가 및 점수 시스템
++ 시작 화면, 종료 화면 구현
 
-### 2. 💻지원 Operating System 및 실행 방법
+
+### 3. 💻지원 Operating System 및 실행 방법
 ***
 해당 게임은 Python과 Pygame 라이브러리를 사용하고 있으며 지원하는 운영 체제는 다음과 같습니다.
 <p align="center">
@@ -88,7 +99,7 @@
 
 
 
-### 3. 🎮게임 실행 예시
+### 4. 🎮게임 실행 예시
 ***
 게임이 시작되면 유저는 적 전투기에서 발사되는 총알(빨간색 구체)를 피하며 코인(노란색 사각형)을 획득하여야 합니다. 적 전투기를 공격하여 제거할 수도 있습니다. 다만 보이지 않는 저격수가 발사하는 유도탄(초록색 구체)을 조심해야 합니다?
 
@@ -96,7 +107,7 @@
 <img src="https://github.com/minseok1897/oss_personal_project_phase1/assets/127393443/8883d0eb-b6b0-4927-9512-bf31ec3fc61e" width="300" height="300"/>
 </p>
 
-### 4. 🎮게임 플레이 설명
+### 5. 🎮게임 플레이 설명
 ***
 전투기 게임(Flying an Airplane)의 조작법과 게임 목표에 관해 설명드리겠습니다.
 
@@ -135,9 +146,11 @@
    + 게임이 종료되면 게임 오버 화면이 나타나고, 지금까지의 최고기록을 표시해줍니다. 최고 기록을 갱신하면 축하메세지 또한 표시해줍니다.
    + 게임을 재시작하려면 게임오버 화면에서 아무 키를 눌러 재시작할 수 있습니다.
 
-### 5. 코드 설명
+### 6. 코드 설명
 ***
 + class PlayerBullet(): 유저 비행기의 공격을 구현하기 위한 class입니다. 색깔은 검정색으로 표시되며 10,10 사이즈를 가지게 됩니다. 또한 화면을 넘어가게 되면 삭제되도록 하였습니다.
+    + def init : 최초 유저 비행기의 공격 구체를 생성함.
+    + def update : 시간에 따라 공격 구체를 이동시키고 화면 밖으로 나가면 삭제함
 ```python
 class PlayerBullet(pygame.sprite.Sprite):
     def __init__(self, x, y):
@@ -155,7 +168,11 @@ class PlayerBullet(pygame.sprite.Sprite):
             self.kill()
 ```
 + class Bullet() : 적 비행기의 공격을 구현하기 위한 class입니다. PlayerBullet과 구현 방식은 동일하며 방향이 반대이며 빨간색으로 표시됩니다.
+    + def init: 적 비행기 공격 구체를  생성함.
+    + def update : 시간에 따라 공격 구체를 이동시키고 화면 밖으로 나가면 삭제함
 + class SniperBullet() : 유도탄 공격을 구현하기 위한 class입니다. math를 import하여서 각도를 계산한뒤 발사하게 됩니다.
+    + def init: 유도탄을 최초로 생성함
+    + def update: 시간에 따라 유저의 초기 방향으로 이동시킴킴
 ```python
 class SniperBullet(pygame.sprite.Sprite):
     //생략
@@ -164,7 +181,10 @@ class SniperBullet(pygame.sprite.Sprite):
         self.speed_y = math.sin(angle) * 5
     // 생략
 ```
-+ class EnemyAirplane() : 적 비행기 모습을 나타내기 위한 class입니다. 총알의 개수와 스피드는 랜덤하게 구할 수 있게 하였고 총알ㅇ르 쏘는 함수가 구현되어 있습니다.
++ class EnemyAirplane() : 적 비행기 모습을 나타내기 위한 class입니다. 총알의 개수와 스피드는 랜덤하게 구할 수 있게 하였고 총알 쏘는 함수가 구현되어 있습니다.
+    + def init: 적 비행기를 등장시킴, 이때 적 비행기가 가진 총알 갯수는 5에서 10 중에 랜덤으로 정함
+    + def update: 적 비행기를 이동시키고 정해진 총알 갯수를 모두 쏘면 퇴장함
+    + def shoot: 총알을 생성하고 이를 발사함함
 ```python
 class EnemyAirplane(pygame.sprite.Sprite):
     def __init__(self, x, y):
@@ -200,8 +220,10 @@ class EnemyAirplane(pygame.sprite.Sprite):
             self.bullets_fired += 1
 ```
 + class Coin() : 점수 획득 시스템을 구현하기 위한 class 입니다. 노란색으로 표시되어 있습니다.
+    +def init: 코인을 생성하고 위치시킴킴
 + def main() : 프로그램을 시작할 때 필요한 기본 세팅 및 게임 시작 구현을 위한 함수입니다.
 + def runGame() : 실제 게임이 진행되는 동안 반복되는 함수입니다. 전투기 이동하는 과정은 아래와 같습니다.
+    + while 문을 돌때마다 각 요소를 업데이트하여 위치를 조정해주고 공격들을 맞았을때 케이스에 따라 결과 분류류
 ```python
 for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -251,7 +273,7 @@ for event in pygame.event.get():
 + def terminate() : 게임 종료를 구현하기 위한 함수입니다.
 
 
-### 6. Reference
+### 7. Reference
 ***
 [1] https://github.com/pygame/pygame "pygame"
 
@@ -259,7 +281,7 @@ for event in pygame.event.get():
 
 [3] https://ai-creator.tistory.com/522 "[파이썬 간단한 게임 만들기]"
 
-### 7. TODO List
+### 8. TODO List
 ***
 + **게임 설명 버튼** 추가 및 구현
 + **유저 비행기 스킬** 추가
